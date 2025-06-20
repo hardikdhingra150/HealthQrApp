@@ -68,6 +68,22 @@
       background-color: #00916e;
     }
 
+    .chat-btn {
+      display: inline-block;
+      margin-bottom: 25px;
+      padding: 12px 25px;
+      background-color: #0096c7;
+      color: white;
+      font-weight: 500;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .chat-btn:hover {
+      background-color: #00b4d8;
+    }
+
     hr {
       border: 0;
       height: 1px;
@@ -142,6 +158,9 @@
       <br>
       <button type="submit">Upload</button>
     </form>
+
+    <!-- Chat Assistant Button -->
+    <a href="{{ url_for('chat') }}" class="chat-btn">🤖 Chat with Assistant</a>
 
     <hr>
 

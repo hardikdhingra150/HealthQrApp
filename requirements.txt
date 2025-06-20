@@ -6,6 +6,6 @@ pillow==11.1.0
 pymongo==4.13.2
 python-dotenv==1.1.0
 qrcode==8.2
-requests==2.32.3
+requests==2.32.4
 Werkzeug==3.1.3
 

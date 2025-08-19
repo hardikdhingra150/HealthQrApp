@@ -1,0 +1,1 @@
+i have created a website in which we can take the health details from the user and user can upload thier medical certificate in the images form and after that i can ne scanned from the qr code and it can be helpful for the hospitals and i have used python for backend and many modules and for frontent i have used majorly html and little bit css and javascript

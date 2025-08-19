@@ -24,9 +24,9 @@ def is_valid_email(email):
     return re.fullmatch(r"^[\w\.-]+@[\w\.-]+\.com$", email)
 
 app = Flask(__name__)
-app.secret_key = 'c2dda215baf860e97a34060c79568fc1beb5e7d875c97607c7236287ec0f117a'
+app.secret_key = ''
 
-app.config["MONGO_URI"] = "mongodb+srv://hardikdhingra150:Infy%23123@cluster0.bgr5gnf.mongodb.net/healthqr?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = ""
 mongo = PyMongo(app)
 
 # Config
@@ -39,9 +39,9 @@ os.makedirs(app.config['QR_FOLDER'], exist_ok=True)
 os.makedirs('profiles', exist_ok=True)
 
 cloudinary.config(
-    cloud_name='dxkdmfdnp',
-    api_key='261146556587339',
-    api_secret='Xl_VmiQfFJWtirCvqQzIQHYIGUU',
+    cloud_name='',
+    api_key='',
+    api_secret='',
     secure=True
 )
 

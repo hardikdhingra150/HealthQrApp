@@ -28,6 +28,11 @@ app.secret_key = 'c2dda215baf860e97a34060c79568fc1beb5e7d875c97607c7236287ec0f11
 
 app.config["MONGO_URI"] = "mongodb+srv://hardikdhingra150:Infy%23123@cluster0.bgr5gnf.mongodb.net/healthqr?retryWrites=true&w=majority"
 mongo = PyMongo(app)
+try:
+    mongo.db.command("ping")
+    print("✅ MongoDB connection successful!")
+except Exception as e:
+    print("❌ MongoDB connection failed:", e)
 
 # Config
 app.config['UPLOAD_FOLDER'] = 'uploads'

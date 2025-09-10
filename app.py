@@ -26,9 +26,6 @@ def is_valid_email(email):
     return re.fullmatch(r"^[\w\.-]+@[\w\.-]+\.com$", email)
 
 app = Flask(__name__)
-if os.getenv("RENDER") != "1":  # Optional safeguard if you set this in Render
-    from dotenv import load_dotenv
-    load_dotenv()
 app.secret_key = os.getenv ('SECRET_KEY')
 
 app.config["MONGO_URI"] = os.getenv ("MONGO_URI")

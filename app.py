@@ -28,7 +28,7 @@ def is_valid_email(email):
 app = Flask(__name__)
 app.secret_key = os.getenv ('SECRET_KEY')
 
-app.config["MONGO_URI"] = os.getenv ("app.config")
+app.config["MONGO_URI"] = os.getenv ("MONGO_URI")
 mongo = PyMongo(app)
 try:
     mongo.db.command("ping")

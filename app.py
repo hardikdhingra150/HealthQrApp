@@ -10,6 +10,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import re
 import json
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Allowed image file extensions
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'webp'}
@@ -24,9 +26,9 @@ def is_valid_email(email):
     return re.fullmatch(r"^[\w\.-]+@[\w\.-]+\.com$", email)
 
 app = Flask(__name__)
-app.secret_key = 'c2dda215baf860e97a34060c79568fc1beb5e7d875c97607c7236287ec0f117a'
+app.secret_key = os.getenv ('c2dda215baf860e97a34060c79568fc1beb5e7d875c97607c7236287ec0f117a')
 
-app.config["MONGO_URI"] = "mongodb+srv://hardikdhingra150:Infy%23123@cluster0.bgr5gnf.mongodb.net/healthqr?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = os.getenv ("mongodb+srv://hardikdhingra150:Infy%23123@cluster0.bgr5gnf.mongodb.net/healthqr?retryWrites=true&w=majority")
 mongo = PyMongo(app)
 try:
     mongo.db.command("ping")
@@ -44,9 +46,9 @@ os.makedirs(app.config['QR_FOLDER'], exist_ok=True)
 os.makedirs('profiles', exist_ok=True)
 
 cloudinary.config(
-    cloud_name='dxkdmfdnp',
-    api_key='261146556587339',
-    api_secret='Xl_VmiQfFJWtirCvqQzIQHYIGUU',
+    cloud_name= os.getenv ('dxkdmfdnp'),
+    api_key= os.getenv ('261146556587339'),
+    api_secret= os.getenv ('Xl_VmiQfFJWtirCvqQzIQHYIGUU' ),
     secure=True
 )
 
